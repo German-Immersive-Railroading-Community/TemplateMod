@@ -17,8 +17,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class GIRInit {
 
-	private static final ArrayList<Block> blocksToRegister = new ArrayList<>();
-	private static final ArrayList<Item> itemsToRegister = new ArrayList<>();
+	public static final ArrayList<Block> blocksToRegister = new ArrayList<>();
+	public static final ArrayList<Item> itemsToRegister = new ArrayList<>();
 
 	public static void init() {
 		final Field[] fields = GIRInit.class.getFields();

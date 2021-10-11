@@ -1,10 +1,7 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
-	maven { url = "http://maven.cil.li/" }
-	maven {
-      url "https://plugins.gradle.org/m2/"
-    }
+        maven { url "https://plugins.gradle.org/m2/" }
         jcenter()
         mavenCentral()
     }
@@ -30,21 +27,16 @@ if(key == null)
 curseforge {
   apiKey = key
   project {
-    id = '440990'
+    id = '{{TESTID}}'
     changelog = file('changelog.md')
     releaseType = 'beta'
     changelogType = 'markdown'
-    mainArtifact(jar) {
-      relations {
-        optionalDependency 'opencomputers'
-      }
-    }
   }
 }
 
 version = ver
 group = 'eu.gir'
-archivesBaseName = 'GIRSignals'
+archivesBaseName = '{{TEST}}'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
@@ -71,7 +63,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "GIRSignals",
+            "Specification-Title": archivesBaseName,
             "Specification-Vendor": "German Immersive Railroading Community",
             "Specification-Version": ver,
             "Implementation-Title": project.name,
